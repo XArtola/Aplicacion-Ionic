@@ -2,76 +2,158 @@
   <ion-toolbar>
     <ion-title>
      Formulario
-    </ion-title>
-  </ion-toolbar>
+   </ion-title>
+   <ion-buttons slot="start">
+    <ion-back-button defaultHref="/tabs/tab1"></ion-back-button> 
+  </ion-buttons>
+</ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-	
-<ion-card>
-  <ion-card-header>
-    
-    <ion-card-title>Xabier Artola</ion-card-title>
-  </ion-card-header>
 
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-  <img src="../../assets/img1.jpg" alt="">
+  <form>
+
+    <ion-card>
+
+      <h1>Formacion académica</h1>
+
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+          <ion-label stacked>Centro de estudios:</ion-label>
+          <ion-input type="text" placeholder="Centro"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+          <ion-label stacked>Titulación:</ion-label>
+          <ion-input type="text" placeholder="Titulación"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+          <ion-label stacked>Descripción:</ion-label>
+          <ion-input type="text" placeholder="Descripción"></ion-input>
+        </ion-item>
+      </ion-list>
+
+    </ion-card>
+
+    <ion-card>
+
+      <h1>Idioma</h1>
+
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+          <ion-label stacked>Idioma:</ion-label>
+          <ion-input type="text" placeholder="Idioma"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-row radio-group>
+       <h3>Comprensión</h3>
+       <ion-col>
+        <ion-item>
+          <ion-label>Bajo</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Medio</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+
+          <ion-label>Alto</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row radio-group>
+     <h3>Expresión escrita</h3>
+     <ion-col>
+      <ion-item>
+        <ion-icon name="woman" item-start></ion-icon>
+        <ion-label>Bajo</ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-icon name="man" item-start></ion-icon>
+        <ion-label>Medio</ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-icon name="man" item-start></ion-icon>
+        <ion-label>Alto</ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row radio-group>
+   <h3>Fluidez</h3>
+   <ion-col>
+    <ion-item>
+      <ion-icon name="woman" item-start></ion-icon>
+      <ion-label>Bajo</ion-label>
+      <ion-radio value="2"></ion-radio>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-icon name="man" item-start></ion-icon>
+      <ion-label>Medio</ion-label>
+      <ion-radio value="1"></ion-radio>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-icon name="man" item-start></ion-icon>
+      <ion-label>Alto</ion-label>
+      <ion-radio value="1"></ion-radio>
+    </ion-item>
+  </ion-col>
+</ion-row>
+
+
 </ion-card>
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Xabier Artola</ion-card-subtitle>
-    <ion-card-title>Formacion académica</ion-card-title>
-  </ion-card-header>
+<ion-item>
+  <ion-icon name="person" item-start></ion-icon>
+  <ion-label stacked>Apellidos:</ion-label>
+  <ion-input type="text" placeholder="Apellidos"></ion-input>
+</ion-item>
 
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Xabier Artola</ion-card-subtitle>
-    <ion-card-title>Experiencia profesional</ion-card-title>
-  </ion-card-header>
+<ion-item>
+  <ion-icon name="mail" item-start></ion-icon>
+  <ion-label stacked>Correo electronico:</ion-label>
+  <ion-input type="email" placeholder="Email"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-icon name="calendar" item-start></ion-icon>
+  <ion-label stacked>Fecha de nacimiento:</ion-label>
+  <ion-datetime displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime>
+</ion-item>
 
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
+<div padding>
+  <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
+</div>
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Xabier Artola</ion-card-subtitle>
-    <ion-card-title>Idiomas</ion-card-title>
-  </ion-card-header>
 
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
 
-<ion-list>
-  <ion-item>
-    <ion-label>zdhf</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>xfjh</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>zdghjfdgh</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>xfchkgj</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>xghnfghn</ion-label>
-  </ion-item>
-</ion-list>
-
+</form>
 </ion-content>
